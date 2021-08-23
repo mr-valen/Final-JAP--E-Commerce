@@ -2,7 +2,7 @@
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 const json_url = "https://japdevdep.github.io/ecommerce-api/product/all.json";
-const cart_icon = "/img/cart.png";
+const cart_icon = "img/cart.png";
 document.addEventListener("DOMContentLoaded", function (e) {
     fetch (json_url)
         .then (respuesta => respuesta.json())
