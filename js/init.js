@@ -40,6 +40,12 @@ var getJSONData = function(url){
     });
 }
 
+// Función que guarda el id del producto clickeado y redirecciona a product-info
+
+function goToInfo(id){
+  sessionStorage.setItem ('currentId', id);
+  window.location.assign("product-info.html");
+}
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.

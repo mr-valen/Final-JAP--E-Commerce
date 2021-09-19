@@ -9,8 +9,8 @@ var currentSortCriteria = undefined;
 var minCount = undefined;
 var maxCount = undefined;
 var SEARCHER = undefined;
-var CONTAINER = document.getElementById("products-container")
-const JSON_URL = "https://japdevdep.github.io/ecommerce-api/product/all.json";
+var CONTAINER = document.getElementById("products-container");
+const JSON_URL = "json/products.json";
 const CART_ICON = "img/cart.png";
 
 // FUNCIONES
@@ -47,11 +47,18 @@ function sortProducts(criteria, array){
     }
     return result;
 }
+
+// Agrega el contenido de la lista de productos al html
+
 function showProductsList(){
     let htmlContentToAppend = "";
+
     SEARCHER = document.getElementById("searcherInput").value;
     for(let i = 0; i < currentProductsArray.length; i++){
         let product = currentProductsArray[i];
+
+        // Corrobora las condiciones (dentro de los filtros de búsqueda por nombre y mín-máx)
+
         if (
                 (
                     (
@@ -67,6 +74,9 @@ function showProductsList(){
                     ) || 
                     (
                         (product.description.toLowerCase().includes(SEARCHER.toLowerCase()))
+                    )  || 
+                    (
+                        (product.category.toLowerCase().includes(SEARCHER.toLowerCase()))
                     ) 
                 ) ||
                 (
@@ -74,29 +84,32 @@ function showProductsList(){
                 )
             ){
             htmlContentToAppend += `
-            <div class="list-group-item">
-                <div class="row">
-                    <div class="col-3 prod-img">
-                        <img src="${product.imgSrc}" alt=" ${product.name} " class="img-thumbnail">
-                    </div>
-                    <div class="col">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">${product.name}</h4>
-                            <small class="text-muted">✔${product.soldCount} se han vendido</small>
+            <button class="list-group-item list-group-item-action each-product" onclick= "goToInfo(${product.id})" id="${product.id}">
+                <div class="list-group-item">
+                    <div class="row">
+                        <div class="col-3 prod-img">
+                            <img src="img/prod${product.id}.jpg" alt="${product.name}" class="img-thumbnail">
                         </div>
-                        <p class="mb-1 prod-desc">${product.description}</p>
-                        <h4 class="mb-1 prod-price">${product.cost} ${product.currency}</h4>
-                        <div class ="add-to-cart">
-                            <p><button><img src="${CART_ICON}"></button></p>
+                        <div class="col">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h4 class="mb-1">${product.name}</h4>
+                                <small class="text-muted">✔${product.soldCount} se han vendido</small>
+                            </div>
+                            <p class="mb-1 prod-desc">${product.description}</p>
+                            <h4 class="mb-1 prod-price">${product.cost} ${product.currency}</h4>
+
                         </div>
                     </div>
                 </div>
-            </div>
+            </button>
             `
         }
         document.getElementById("products-container").innerHTML = htmlContentToAppend;
-    }  
+    }   
+    
 }
+
+// Función que combina todas: Ordenar, Filtrar y Mostrar
 function sortAndShowProducts(sortCriteria, productsArray){
     currentSortCriteria = sortCriteria;
 
@@ -107,13 +120,24 @@ function sortAndShowProducts(sortCriteria, productsArray){
     showProductsList();
 }
 
+
+// sessionStorage.setItem('currentProductId', "prod-"+product.id);
+
 document.addEventListener("DOMContentLoaded", function (e) {
+
+    // Trae Json mediante la función getJSONData del init
+
     getJSONData(JSON_URL).then(function(resultObj){
         if (resultObj.status === "ok"){
             sortAndShowProducts (ORDER_ASC_BY_REL, resultObj.data);
         }
+
     })
     
+    // Llama a las funciones al clickear los botones
+
+    // Ordenamiento de objetos
+
     document.getElementById("sortByRel").addEventListener("click", function(){
         sortAndShowProducts(ORDER_ASC_BY_REL);
     });
@@ -123,18 +147,11 @@ document.addEventListener("DOMContentLoaded", function (e) {
     document.getElementById("sortDesc").addEventListener("click", function(){
         sortAndShowProducts(ORDER_DESC_BY_PRICE);
     });
-    document.getElementById("clearRangeFilter").addEventListener("click", function(){
-        document.getElementById("rangeFilterCountMin").value = "";
-        document.getElementById("rangeFilterCountMax").value = "";
 
-        minCount = undefined;
-        maxCount = undefined;
-
-        showProductsList();
-    });
+    
+    // Filtro de búsqueda entre mín y máx
 
     document.getElementById("rangeFilterCount").addEventListener("click", function(){
-        //Obtengo el mínimo y máximo de los intervalos para filtrar el precio por productos
         minCount = document.getElementById("rangeFilterCountMin").value;
         maxCount = document.getElementById("rangeFilterCountMax").value;
 
@@ -155,8 +172,35 @@ document.addEventListener("DOMContentLoaded", function (e) {
         showProductsList();
     });
 
+    // Limpiar filtro de búsqueda entre mín y máx
+
+    document.getElementById("clearRangeFilter").addEventListener("click", function(){
+        document.getElementById("rangeFilterCountMin").value = "";
+        document.getElementById("rangeFilterCountMax").value = "";
+
+        minCount = undefined;
+        maxCount = undefined;
+
+        showProductsList();
+    });
+
+    // Actualización del filtro de búsqueda cuando se modifica el input del filtro de búsqueda por nombre o contenido
+
     document.getElementById("searcherInput").addEventListener("input", function(){
         showProductsList();
+
     })
+
+    // var currentProductsArray = document.querySelectorAll('label.each-product');
+    // console.log(currentProductsArray)
+    //  for(let i = 0; currentProductsArray.length; i++){
+    //      let product = currentProductsArray[i];
+    //      document.getElementById(product.id).addEventListener("click", function(){
+    //         var tempProductId = product.id;
+    //         console.log(tempProductId);
+    //         sessionStorage.setItem ('tempProductId', tempProductId);
+    //         alert("hola"+product.id);
+    //      })
+    // }
 
 });

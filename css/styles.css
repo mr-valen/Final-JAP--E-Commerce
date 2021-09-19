@@ -163,6 +163,25 @@ a.custom-card:hover {
   -webkit-transform: scale(1.15);
   transition:all .5s ease-in-out;
 }
+.prod-img-gallery{
+  width: 100%;
+}
+.prod-img-gallery img{
+  margin-left: 30px;
+  margin-top: 20px;
+  width: 80vh;
+}
+.related-prod-img {
+  margin-left: 20vh;
+}
+.related-prod-img img{
+  width: 20vh;
+}
+
+.related-prod-img p{
+  font-size: 2vh;
+  text-align: center;
+}
 
 .prod-price{
   float: right;
@@ -185,7 +204,49 @@ a.custom-card:hover {
   border: none;
   border-radius: 10px;
 }
-
+/* COMMENTS */
+.stars-container {
+  float: right;
+  margin-right: 5vh;
+}
+.comment-container {
+  border: solid 1px black;
+  margin-left: 10vh;
+  margin-right: 10vh;
+  margin-top: 2vh;
+  border-radius: 10px;
+}
+.comment-container .user{
+  margin-top: 1vh;
+  margin-left: 10vh;
+}
+.comment-container .desc{
+  text-align: center;
+}
+.comment-container .date{
+  text-align: right;
+  margin-right: 10vh;
+}
+.add-comments {
+  margin-top: 2vh;
+  margin-left: 10vh;
+  margin-right: 10vh;
+}
+.yellow {
+  color: yellow;
+}
+.star-shadow:hover{
+  color: yellow;
+}
+.add-comment{
+  width: 100%;
+}
+.send-button{
+  float: right;
+}
+.back-to-products{
+  margin-top: 10vh;
+}
 /* LOGIN */
 .login-box{
   padding-top: .8rem;

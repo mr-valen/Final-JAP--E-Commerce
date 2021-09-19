@@ -1,0 +1,140 @@
+[
+    {
+        "id": 1,
+        "name": "Chevrolet Onix Joy",
+        "category": "Autos",
+        "description": "Generación 2019, variedad de colores. Motor 1.0, ideal para ciudad.",
+        "descriptionExt": "Potenciá tu actitud con Onix Joy que, además de destacarse por su diseño juvenil y moderno, te ofrecé una óptima autonomía, un desempeño equilibrado y el máximo confort interior. \u003cbr\u003eYa sea un viaje largo o un simple paseo por la ciudad, el confort es uno de los puntos fuertes del Onix. Esta versión incluye aire acondicionado, asientos tapizados en tela y gran espacio interior que te garantiza el máximo confort.",
+        "cost": 13500,
+        "currency": "USD",
+        "relatedProducts": [2, 4],
+        "soldCount": 14,
+        "comments": [{
+            "id": 1,
+            "score": 3,
+            "description": "Ya llevo un año con este auto y la verdad que tiene sus ventajas y desventajas",
+            "user": "juan_pedro",
+            "dateTime": "2020-02-25 18:03:52"
+        },
+        {   
+            "id": 2,
+            "score": 5,
+            "description": "Es un auto muy cómodo y en relación precio/calidad vale la pena!",
+            "user": "maria_sanchez",
+            "dateTime": "2020-01-17 13:42:18"
+        },
+        {
+            "id": 3,
+            "score": 4,
+            "description": "Casi todo bien!, excepto por algún detalle de gusto personal",
+            "user": "paola_perez",
+            "dateTime": "2020-03-14 09:05:13"
+        },
+        {
+            "id": 4,
+            "score": 5,
+            "description": "Un espectáculo el auto!",
+            "user": "pablo_gomez",
+            "dateTime": "2020-02-21 15:05:22"
+        }]
+    },
+    {
+        "id": 2,
+        "name": "Fiat Way",
+        "category": "Autos",
+        "description": "La versión de Fiat que brinda confort y a un precio accesible.",
+        "descriptionExt": "",
+        "cost": 14500,
+        "currency": "USD",
+        "soldCount": 52,
+        "relatedProducts": [1, 4],
+        "comments": []
+    },
+    {
+        "id": 3,
+        "name": "Suzuki Celerio",
+        "category": "Autos",
+        "description": "Un auto que se ha ganado la buena fama por su economía con el combustible.",
+        "descriptionExt": "",
+        "cost": 12500,
+        "currency": "USD",
+        "soldCount": 25,
+        "relatedProducts": [1, 2],
+        "comments": []
+    },
+    {
+        "id": 4,
+        "name": "Peugeot 208",
+        "category": "Autos",
+        "description": "El modelo de auto que se sigue renovando y manteniendo su prestigio en comodidad.",
+        "descriptionExt": "",
+        "cost": 15200,
+        "currency": "USD",
+        "soldCount": 17,
+        "relatedProducts": [2, 3],
+        "comments": []
+    },
+    {
+        "id": 5,
+        "name": "Nokia 1100",
+        "category": "Celulares",
+        "description": "Llamadas, SMS y el juego de la viborita.",
+        "descriptionExt": "Celular de los de antes, comunicación básica pero una alta resistencia.",
+        "cost": 450,
+        "currency": "UYU",
+        "soldCount": 7,
+        "relatedProducts": [6, 7],
+        "comments": [{
+            "id": 1,
+            "score": 5,
+            "description": "Lo tengo hace más de 15 años y anda, ya no hacen las cosas como antes",
+            "user": "el_tata1",
+            "dateTime": "2020-02-25 18:03:52"
+        },
+        {   
+            "id": 2,
+            "score": 4,
+            "description": "Cada tanto lo prendo para jugar a la viborita",
+            "user": "ale13013",
+            "dateTime": "2020-01-17 13:42:18"
+        },
+        {
+            "id": 3,
+            "score": 2,
+            "description": "Lo uso como pisapapeles",
+            "user": "lo-s_sims",
+            "dateTime": "2020-03-14 09:05:13"
+        },
+        {
+            "id": 4,
+            "score": 5,
+            "description": "uenisimo!! reco",
+            "user": "lalibelularoja",
+            "dateTime": "2020-02-21 15:05:22"
+        }]
+    },
+    {
+        "id": 6,
+        "name": "Nokia 5200",
+        "category": "Celulares",
+        "description": "Deslizable. Cámara de fotos.",
+        "descriptionExt": "",
+        "cost": 1950,
+        "currency": "UYU",
+        "soldCount": 11,
+        "relatedProducts": [5, 7],
+        "comments": []
+    },
+    {
+        "id": 7,
+        "name": "Motorola V3",
+        "category": "Celulares",
+        "description": "El modelo más fino, con cámara de fotos frontal.",
+        "descriptionExt": "",
+        "cost": 2000,
+        "currency": "UYU",
+        "soldCount": 14,
+        "relatedProducts": [6, 7],
+        "comments": []
+    }
+]

@@ -23,16 +23,73 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <a class="py-2 d-none d-md-inline-block" id="usuarioNombre" href=""></a>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 19/09/2021) y Entrega 4 (Fecha de entrega: 03/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <div class="container mt-5">
+    <h3 id="categoryName"></h3>
+    <hr class="my-3">
+    <dl>
+      <dt>Descripción</dt>
+      <dd>
+        <p id="categoryDescription"></p>
+      </dd>
+
+      <dt>Cantidad de vendidos</dt>
+      <dd>
+        <p id="productCount"></p>
+      </dd>
+
+      <dt>Precio</dt>
+      <dd>
+        <p id="productCost"></p>
+      </dd>
+
+      <dt>Otros productos que te pueden interesar</dt>
+      <div id="productCriteria"></div>
+      <dd>
+      </dd>
+
+      <dt>Imágenes ilustrativas</dt>
+      <div class="row text-center text-lg-left pt-2 prod-img-gallery" id="productImagesGallery"></div>
+
     </div>
-  </div>
+      <dd>
+        <div class="row text-center text-lg-left pt-2 prod-img-gallery" id="productImagesGallery">
+        </div>
+      </dd>
+      
+    <div class="comments-container" id="commentsContainer"></div>
+    <div class="comments-container" id="newComment"></div>
+
+    <div class="add-comments">
+        <p>Agrega un comentario y califica el producto</p>
+        <textarea class="add-comment" id="new-comment"></textarea>
+        <div>
+          <input type="radio" id="1star"
+           name="stars" value="1">
+          <label class ="fa fa-star star-shadow" for="1star">1</label>
+      
+          <input type="radio" id="2star"
+           name="stars" value="2">
+          <label class ="fa fa-star star-shadow" for="2star">2</label>
+      
+          <input type="radio" id="3star"
+           name="stars" value="3">
+          <label class ="fa fa-star star-shadow" for="3star">3</label>
+          <input type="radio" id="4star"
+           name="stars" value="4">
+          <label class ="fa fa-star star-shadow" for="4star">4</label>
+          <input type="radio" id="5star"
+           name="stars" value="5">
+          <label class ="fa fa-star star-shadow" for="5star">5</label>
+        </div>
+        <button class= "send-button" onclick="addComment()">Enviar comentario</button>
+    </div>
+
+    </dl>
+    <a type="button" class="btn btn-light btn-lg btn-block back-to-products" href="products.html">Ver productos</a>
+  </div> 
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
