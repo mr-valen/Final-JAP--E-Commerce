@@ -50,7 +50,8 @@ let isLogged = (usuario === "null") ? false : true;
 
 function goToLogin() {
   if (!isLogged && window.location.pathname !== '/login.html') {
-    window.location.assign("/login.html");
+    // window.location.assign("/login.html");
+    alert ("hola")
   }
   if (isLogged && window.location.pathname === '/login.html') {
     window.location.assign("/index.html");
