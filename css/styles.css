@@ -138,6 +138,10 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+/* MENU */
+#usuarioNombre{
+  color: white;
+}
 
 /* PRODUCTS */
 .search-cont{

@@ -40,8 +40,14 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <a class="py-2 d-none d-md-inline-block" id="usuarioNombre" href=""></a>
+      <a class="dropdown nav-item py-2 d-none d-md-inline-block">
+        <a class="btn dropdown-toggle" id="usuarioNombre" data-bs-toggle="dropdown" aria-expanded="false"></a>
+        <ul class="dropdown-menu" aria-labelledby="usuarioNombre">
+          <li><a href="my-profile.html" class="dropdown-item">Mi perfil</a></li>
+          <li><a href="cart.html" class="dropdown-item">Mi carrito</a></li>
+          <li><button class="dropdown-item" onclick="logOut()">Cerrar sesión</button></li>
+        </ul>
+      </a>
     </div>
   </nav>
   <div class="container p-5">
@@ -60,8 +66,7 @@
       <div></div>
     </div>
   </div>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
   <script src="js/dropzone.js"></script>
   <script src="js/init.js"></script>
   <script src="js/cart.js"></script>

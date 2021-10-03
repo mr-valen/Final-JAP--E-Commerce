@@ -1,4 +1,4 @@
-const JSON_URL = "json/products.json";
+const JSON_URL = "https://lince666.github.io/e-mercado/json/products.json";
 var currentId = sessionStorage.getItem('currentId');
 let commentsArray = [];
 

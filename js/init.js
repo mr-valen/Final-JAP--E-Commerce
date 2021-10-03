@@ -7,6 +7,8 @@ const PRODUCT_INFO_COMMENTS_URL = "https://japdevdep.github.io/ecommerce-api/pro
 const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
 const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
 
+var usuario = sessionStorage.getItem('usuarioName');
+
 var showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
 }
@@ -40,16 +42,41 @@ var getJSONData = function(url){
     });
 }
 
+// LOGIN
+let isLogged = (usuario === "null") ? false : true;
+
+
+// Función que cuando no se está loggeado manda al login
+
+function goToLogin() {
+  if (!isLogged && window.location.pathname !== '/login.html') {
+    window.location.replace("login.html");
+  }
+  if (isLogged && window.location.pathname === '/login.html') {
+    window.location.replace("index.html");
+  }
+}
+
+// Función que asigna null a la variable usuario
+function logOut(){
+  sessionStorage.setItem ('usuarioName', null);
+  window.location.replace("login.html");
+}
+
 // Función que guarda el id del producto clickeado y redirecciona a product-info
 
 function goToInfo(id){
   sessionStorage.setItem ('currentId', id);
   window.location.assign("product-info.html");
 }
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
+//elementos HTML presentes. Busca el id del contenedor del usuario y le agrega la variable usuario guardada en el storage
+
 document.addEventListener("DOMContentLoaded", function(e){
-  var usuario = sessionStorage.getItem('usuarioName');
-  document.getElementById('usuarioNombre').innerHTML += usuario;
+  goToLogin();
+  if (window.location.pathname !== "/login.html"){
+    document.getElementById('usuarioNombre').innerHTML += usuario;
+  }
 });
