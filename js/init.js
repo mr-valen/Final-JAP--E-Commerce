@@ -49,13 +49,12 @@ let isLogged = (usuario === "null") ? false : true;
 // Función que cuando no se está loggeado manda al login
 
 function goToLogin() {
-  if (!isLogged && window.location.pathname !== 'login.html') {
-    console.log(window.location.pathname);
-    // window.location.assign("login.html");
+  if (!isLogged && window.location.pathname !== '/e-mercado/login.html') {
+    window.location.assign("login.html");
   }
-  if (isLogged && window.location.pathname === 'login.html') {
+  if (isLogged && window.location.pathname === '/e-mercado/login.html') {
     console.log(window.location.pathname);
-    // window.location.assign("index.html");
+    window.location.assign("index.html");
   }
 }
 
@@ -78,7 +77,7 @@ function goToInfo(id){
 
 document.addEventListener("DOMContentLoaded", function(e){
   goToLogin();
-  if (window.location.pathname !== "https://lince666.github.io/e-mercado/login.html"){
+  if (window.location.pathname !== "/e-mercado/login.html"){
     document.getElementById('usuarioNombre').innerHTML += usuario;
   }
 });
