@@ -7,7 +7,7 @@ const PRODUCT_INFO_COMMENTS_URL = "https://japdevdep.github.io/ecommerce-api/pro
 const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
 const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
 
-var usuario = sessionStorage.getItem('usuarioName');
+var usuario = localStorage.getItem('usuarioName');
 
 var showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
@@ -59,7 +59,7 @@ function goToLogin() {
 
 // Función que asigna null a la variable usuario
 function logOut(){
-  sessionStorage.setItem ('usuarioName', null);
+  localStorage.setItem ('usuarioName', null);
   window.location.replace("login.html");
 }
 
