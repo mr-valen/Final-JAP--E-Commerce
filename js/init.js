@@ -49,18 +49,20 @@ let isLogged = (usuario === "null") ? false : true;
 // Función que cuando no se está loggeado manda al login
 
 function goToLogin() {
-  if (!isLogged && window.location.pathname !== 'e-mercado/login.html') {
-    window.location.assign("e-mercado/login.html");
+  if (!isLogged && window.location.pathname !== 'login.html') {
+    console.log(window.location.pathname);
+    // window.location.assign("login.html");
   }
-  if (isLogged && window.location.pathname === 'e-mercado/login.html') {
-    window.location.assign("e-mercado/index.html");
+  if (isLogged && window.location.pathname === 'login.html') {
+    console.log(window.location.pathname);
+    // window.location.assign("index.html");
   }
 }
 
 // Función que asigna null a la variable usuario
 function logOut(){
   localStorage.setItem ('usuarioName', null);
-  window.location.assign("e-mercado/login.html");
+  window.location.assign("login.html");
 }
 
 // Función que guarda el id del producto clickeado y redirecciona a product-info
