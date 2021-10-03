@@ -50,17 +50,17 @@ let isLogged = (usuario === "null") ? false : true;
 
 function goToLogin() {
   if (!isLogged && window.location.pathname !== '/login.html') {
-    window.location.replace("login.html");
+    window.location.replace("/login.html");
   }
   if (isLogged && window.location.pathname === '/login.html') {
-    window.location.replace("index.html");
+    window.location.replace("/index.html");
   }
 }
 
 // Función que asigna null a la variable usuario
 function logOut(){
   localStorage.setItem ('usuarioName', null);
-  window.location.replace("login.html");
+  window.location.replace("/login.html");
 }
 
 // Función que guarda el id del producto clickeado y redirecciona a product-info
