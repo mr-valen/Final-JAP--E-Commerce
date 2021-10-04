@@ -49,16 +49,37 @@ function showProductInfo(array, id){
                                         </div>
             `
 
-            // En este caso es con 4 imágenes por eso itera 4 veces, lo ideal sería crear una variable para la cantidad de imágenes y que itere esa cantidad de veces
+            // Carrusel de fotos
             
-            for (let i = 1; i <= 4; i++){
-                htmlContentToImagesGallery +=`
-                        <div>
-                            <div class="prod-img">
-                                <img src="img/prod${product.id}_${i}.jpg" alt="${product.name}" class="img-thumbnail">
-                            </div>
-                        </div>
-                `};
+            htmlContentToImagesGallery +=`
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/prod${product.id}_1.jpg" class="d-block w-100" alt="${product.name}">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/prod${product.id}_2.jpg" class="d-block w-100" alt="${product.name}">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/prod${product.id}_3.jpg" class="d-block w-100" alt="${product.name}">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/prod${product.id}_4.jpg" class="d-block w-100" alt="${product.name}">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+                `
+
+            // Muestra comentarios guardados en el json
+
             for (let i = 0; i < commentsArray.length; i++){
                 let comment = commentsArray[i];
                 let htmlStars = "";
