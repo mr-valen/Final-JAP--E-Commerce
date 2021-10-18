@@ -183,5 +183,17 @@
             "user": "yosoy_yo",
             "dateTime": "2020-02-21 15:05:22"
         }]
+    },
+    {
+        "id": 8,
+        "name": "Pino de olor para el auto",
+        "category": "Autos",
+        "description": "Clásica fragancia para tu automóvil.",
+        "descriptionExt": "",
+        "cost": 100,
+        "currency": "UYU",
+        "soldCount": 99,
+        "relatedProducts": [1, 3],
+        "comments": []
     }
 ]

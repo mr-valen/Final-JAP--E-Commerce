@@ -10,7 +10,8 @@ var minCount = undefined;
 var maxCount = undefined;
 var SEARCHER = undefined;
 var CONTAINER = document.getElementById("products-container");
-const JSON_URL = "https://lince666.github.io/e-mercado/json/products.json";
+// https://lince666.github.io/e-mercado
+const JSON_URL = "/json/products.json";
 const CART_ICON = "img/cart.png";
 
 // FUNCIONES

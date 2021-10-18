@@ -4,7 +4,7 @@ const CATEGORY_INFO_URL = "https://japdevdep.github.io/ecommerce-api/category/12
 const PRODUCTS_URL = "https://japdevdep.github.io/ecommerce-api/product/all.json";
 const PRODUCT_INFO_URL = "https://japdevdep.github.io/ecommerce-api/product/5678.json";
 const PRODUCT_INFO_COMMENTS_URL = "https://japdevdep.github.io/ecommerce-api/product/5678-comments.json";
-const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
+const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/654.json";
 const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
 
 var usuario = localStorage.getItem('usuarioName');
@@ -49,12 +49,10 @@ let isLogged = (usuario === "null") ? false : true;
 // Función que cuando no se está loggeado manda al login
 
 function goToLogin() {
-  // if (!isLogged && window.location.pathname !== '/login.html'){
-  if (!isLogged && window.location.pathname !== '/e-mercado/login.html') {
+  if (!isLogged && !window.location.pathname.includes("/login.html")) {
     window.location.assign("login.html");
   }
-  // if (isLogged && window.location.pathname === '/login.html'){
-  if (isLogged && window.location.pathname === '/e-mercado/login.html') {
+  if (isLogged && window.location.pathname.includes("/login.html")) {
     window.location.assign("index.html");
   }
 }
