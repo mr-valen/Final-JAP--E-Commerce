@@ -54,14 +54,23 @@ function guardarDatos(){
 
 function mostrarDatos(){
     let htmlContentToAppend = "";
+    if (datosStorageParse){
+        htmlContentToAppend += `
+        <p>Nombres: ${datosStorageParse.nombre}</p>
+        <p>Apellidos: ${datosStorageParse.apellido}</p>
+        <p>Edad: ${datosStorageParse.edad}</p>
+        <p>E-mail: ${datosStorageParse.email}</p>
+        <p>Teléfono: ${datosStorageParse.telefono}</p>
+        <button id="btnEditarDatos"class="btn btn-primary" onclick="editarDatos()">Editar datos ✎</button><br>
+        `}else{
     htmlContentToAppend += `
-    <p>Nombres: ${datosStorageParse.nombre}</p>
-    <p>Apellidos: ${datosStorageParse.apellido}</p>
-    <p>Edad: ${datosStorageParse.edad}</p>
-    <p>E-mail: ${datosStorageParse.email}</p>
-    <p>Teléfono: ${datosStorageParse.telefono}</p>
+    <p>Nombres: ?</p>
+    <p>Apellidos: ?</p>
+    <p>Edad: ?</p>
+    <p>E-mail: ?</p>
+    <p>Teléfono: ?</p>
     <button id="btnEditarDatos"class="btn btn-primary" onclick="editarDatos()">Editar datos ✎</button><br>
-    `
+    `}
     datosGuardados.innerHTML = htmlContentToAppend;
 };
 
