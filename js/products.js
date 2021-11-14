@@ -85,10 +85,10 @@ function showProductsList(){
                 )
             ){
             htmlContentToAppend += `
-            <button class="list-group-item list-group-item-action each-product" onclick= "goToInfo(${product.id})" id="${product.id}">
+            <button class="col-12 col-sm-12 col-md-6 col-xl-4 list-group-item list-group-item-action each-product" onclick= "goToInfo(${product.id})" id="${product.id}">
                 <div class="list-group-item">
-                    <div class="row">
-                        <div class="col-3 prod-img">
+                    <div class="row" style="height: 24em;">
+                        <div class="col-12 prod-img">
                             <img src="img/prod${product.id}.jpg" alt="${product.name}" class="img-thumbnail">
                         </div>
                         <div class="col">
@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         if (resultObj.status === "ok"){
             sortAndShowProducts (ORDER_ASC_BY_REL, resultObj.data);
         }
-
+    console.log(resultObj);
     })
     
     // Llama a las funciones al clickear los botones
@@ -191,17 +191,4 @@ document.addEventListener("DOMContentLoaded", function (e) {
         showProductsList();
 
     })
-
-    // var currentProductsArray = document.querySelectorAll('label.each-product');
-    // console.log(currentProductsArray)
-    //  for(let i = 0; currentProductsArray.length; i++){
-    //      let product = currentProductsArray[i];
-    //      document.getElementById(product.id).addEventListener("click", function(){
-    //         var tempProductId = product.id;
-    //         console.log(tempProductId);
-    //         sessionStorage.setItem ('tempProductId', tempProductId);
-    //         alert("hola"+product.id);
-    //      })
-    // }
-
 });

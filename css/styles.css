@@ -143,6 +143,34 @@ a.custom-card:hover {
   color: white;
 }
 
+/* MY PROFILE */
+.avatar{
+  border-radius: 50% / 25%;
+  width: 12rem;
+  height: 12rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  overflow: hidden;
+  background-size: 100%;
+}
+.avatar-1{
+  background-image: url(/img/avatar/1.jpg);
+}
+.avatar-2{
+  background-image: url(/img/avatar/2.jpg);
+}
+.avatar-3{
+  background-image: url(/img/avatar/3.jpg);
+}
+.avatar-4{
+  background-image: url(/img/avatar/4.jpg);
+}
+.avatar-5{
+  background-image: url(/img/avatar/5.jpg);
+}
+.avatar-6{
+  background-image: url(/img/avatar/6.jpg);
+}
+
 /* PRODUCTS */
 .search-cont{
   padding-bottom: 15px;
@@ -189,15 +217,15 @@ a.custom-card:hover {
 
 .prod-price{
   float: right;
-  margin: 20px;
+  margin-bottom: 10px;
 }
 .prod-desc{
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .add-to-cart{
   float: right;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .add-to-cart img{

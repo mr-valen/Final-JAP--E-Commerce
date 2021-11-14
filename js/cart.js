@@ -81,5 +81,10 @@ document.addEventListener("DOMContentLoaded", function(e){
             showCart(resultObj.data);
         }
 
+    })
+    // Clicks para restar o sumar cantidad de productos a comprar
+
+    document.getElementById("sortByRel").addEventListener("click", function(){
+        sortAndShowProducts(ORDER_ASC_BY_REL);
     });
 });
