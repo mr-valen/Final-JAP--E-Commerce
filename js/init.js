@@ -67,7 +67,6 @@ function logOut(){
 
 function goToInfo(id){
   sessionStorage.setItem ('currentId', id);
-  window.location.assign("product-info.html");
 }
 
 //Función que se ejecuta una vez que se haya lanzado el evento de

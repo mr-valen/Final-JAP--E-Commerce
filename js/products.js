@@ -10,7 +10,6 @@ var minCount = undefined;
 var maxCount = undefined;
 var SEARCHER = undefined;
 var CONTAINER = document.getElementById("products-container");
-// https://lince666.github.io/e-mercado
 const JSON_URL = "/json/products.json";
 const CART_ICON = "img/cart.png";
 
@@ -85,7 +84,7 @@ function showProductsList(){
                 )
             ){
             htmlContentToAppend += `
-            <button class="col-12 col-sm-12 col-md-6 col-xl-4 list-group-item list-group-item-action each-product" onclick= "goToInfo(${product.id})" id="${product.id}">
+            <a href="product-info.html" class="col-12 col-sm-12 col-md-6 col-xl-4 list-group-item list-group-item-action each-product" onclick= "goToInfo(${product.id})" id="${product.id}">
                 <div class="list-group-item">
                     <div class="row" style="height: 24em;">
                         <div class="col-12 prod-img">
@@ -102,7 +101,7 @@ function showProductsList(){
                         </div>
                     </div>
                 </div>
-            </button>
+            </a>
             `
         }
         document.getElementById("products-container").innerHTML = htmlContentToAppend;
