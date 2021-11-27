@@ -292,17 +292,17 @@ a.custom-card:hover {
 }
 
 .img-login-1{
-  background-image: url(img/cat5.jpg);
+  background-image: url(../img/cat5.jpg);
   background-size: cover;
   background-position: center;
 }
 .img-login-2{
-  background-image: url(img/cat7.jpg);
+  background-image: url(../img/cat7.jpg);
   background-size: cover;
   background-position: center;
 }
 .img-login-3{
-  background-image: url(img/cat4.jpg);
+  background-image: url(../img/cat4.jpg);
   background-size: cover;
   background-position: center;
 }
