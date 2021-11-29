@@ -3,6 +3,9 @@
   --maincolor: #229fbc;
   --light: #ffffff;
 }
+.h-auto{
+  height: auto;
+}
 
 .jumbotron, .card-body, .container, .site-header{
     font-family: 'Raleway', serif !important;
@@ -242,6 +245,64 @@ a.custom-card:hover {
   border: none;
   border-radius: 10px;
 }
+
+
+.cart-img {
+  border: 1px lightgrey solid;
+  overflow: hidden;
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+}
+.cart-img img{
+  height: 10rem;
+  position: absolute;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* SUCCESS PURCHASE */
+
+.order-card {
+  color: #fff;
+}
+
+.bg-c-green {
+  background: linear-gradient(45deg,#19ff19,#08da08);
+}
+
+.card {
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+  box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+  border: none;
+  margin-bottom: 30px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.card .card-block {
+  padding: 25px;
+  border: #19ff19 1px double;
+}
+
+.order-card i {
+  font-size: 26px;
+}
+
+.f-left {
+  float: left;
+}
+
+.f-right {
+  float: right;
+}
+#costPurchase{
+  font-weight: bolder;
+}
+
 /* COMMENTS */
 .stars-container {
   float: right;

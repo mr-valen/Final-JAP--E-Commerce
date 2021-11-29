@@ -34,13 +34,13 @@ function showProductInfo(array, id){
             htmlContentToCost += `<p>${product.cost}</p>`
             htmlContentToCriteria += `
                                         <div class="row">
-                                            <div class="list-group prod-img related-prod-img">
+                                            <div class="list-group prod-img related-prod-img col-3">
                                                 <button class="list-group-item list-group-item-action" onclick="goToInfo(${productRelated1})">
                                                     <p>${currentProductsArray[productRelated11].name}</p>
                                                     <img src="img/prod${productRelated1}.jpg" alt="${currentProductsArray[productRelated11].name}" class="img-thumbnail">
                                                 </button>
                                             </div>
-                                            <div class="list-group prod-img related-prod-img">
+                                            <div class="list-group prod-img related-prod-img col-3">
                                                 <button class="list-group-item list-group-item-action" onclick="goToInfo(${productRelated2})">
                                                     <p>${currentProductsArray[productRelated21].name}</p>
                                                     <img src="img/prod${productRelated2}.jpg" alt="${currentProductsArray[productRelated21].name}" class="img-thumbnail">
@@ -52,7 +52,8 @@ function showProductInfo(array, id){
             // Carrusel de fotos
             
             htmlContentToImagesGallery +=`
-                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="col-12 col-md-3"></div>
+                <div id="carouselExampleControls" class="carousel slide w-100 col-12 col-md-6" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="img/prod${product.id}_1.jpg" class="d-block w-100" alt="${product.name}">
@@ -117,7 +118,7 @@ function showProductInfo(array, id){
 function addComment(){
     let htmlNewComment = "";
     newComment = document.getElementById("new-comment").value;
-    user = sessionStorage.getItem('usuarioName');
+    user = localStorage.getItem('usuarioName');
     let date = new Date().toISOString().slice(0, 10);
     let hours = new Date().toISOString().slice(11, 19);
     

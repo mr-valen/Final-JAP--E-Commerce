@@ -7,6 +7,5 @@ document.addEventListener("DOMContentLoaded", function(e){
 
 function nombreUsuario(){
 var usuario = document.getElementById('username').value;
-console.log(usuario);
 localStorage.setItem ('usuarioName', usuario);
 };
